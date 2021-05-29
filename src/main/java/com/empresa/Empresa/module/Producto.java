@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 
 
@@ -21,6 +22,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Producto extends Base
 {
 	private static final long serialVersionUID = 1L;
@@ -30,14 +32,15 @@ public class Producto extends Base
 	@Pattern( regexp = "[a-zA-Z ]{1,25}", message = "Solo letras" )
 	private String nombreProducto;
 	
+	
+	
+	//@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo numeros")
-	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	private double precioProducto;
 	
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo numeros")
-	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	private double disponibilidadProducto;
 	
 
