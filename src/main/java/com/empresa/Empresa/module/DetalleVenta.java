@@ -30,22 +30,26 @@ public class DetalleVenta extends Base
 	
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo números")
-	@Pattern( regexp = "^[0-9]+([.][0-9])?$", message = "El digito no es valido" )
+//	@Pattern( regexp = "^[0-9]+([.][0-9])?$", message = "El digito no es valido" )
 	private double subtotalDetalleVenta;
 	
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo números")
-	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
+//	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	private double kilosDetalleVenta;
 	
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo números")
-	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
+//	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	private double precioDetalleVenta;
 	
 	@OneToOne( cascade = CascadeType.ALL, optional = false )
 	@JoinColumn( name = "producto_Id", nullable = false )
 	private Producto producto;
+	
+	@OneToOne( cascade = CascadeType.ALL, optional = false )
+	@JoinColumn( name = "venta_Id", nullable = false )
+	private Venta venta;
 	
 	
 //	@OneToOne( cascade = CascadeType.ALL, optional = false )

@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table( name = "clientes" )
@@ -19,6 +20,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Cliente extends Base
 {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +29,7 @@ public class Cliente extends Base
 	@JoinColumn( name = "persona_Id", nullable = false )
 	private Persona persona;
 
-	@OneToOne( cascade = CascadeType.ALL, optional = false)
-	@JoinColumn( name = "usuario_Id", nullable = false )
-	private Usuario usuario;
+//	@OneToOne( cascade = CascadeType.ALL, optional = false)
+//	@JoinColumn( name = "usuario_Id", nullable = false )
+//	private Usuario usuario;
 }

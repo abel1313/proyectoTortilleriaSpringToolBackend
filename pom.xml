@@ -15,7 +15,7 @@
 	<name>Empresa</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 
 		<!-- Cambiar a la version de java que es como 1.8 -->
 	</properties>
@@ -39,12 +39,21 @@
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 		
-<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql 
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <scope>runtime</scope>
 </dependency>
+-->
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+        <scope>runtime</scope>
+</dependency>
+
 
 		
 		<dependency>

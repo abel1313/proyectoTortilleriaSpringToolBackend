@@ -4,8 +4,8 @@ import org.springframework.stereotype.Repository;
 
 import com.empresa.Empresa.module.Venta;
 
-//@Repository
-//public interface IRepositoryVenta extends IBaseRepository<Venta, Integer>
-//{
-//
-//}
+@Repository
+public interface IVentaRepository extends IBaseRepository<Venta, Integer>
+{
+
+}

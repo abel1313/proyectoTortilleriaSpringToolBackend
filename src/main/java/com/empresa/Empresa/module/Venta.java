@@ -19,6 +19,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table( name = "ventas" )
@@ -26,25 +27,26 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Venta extends Base
 {
 	private static final long serialVersionUID = 1L;
 	
 	@NotNull( message = "este campo no debe ser nullo" )
 	@Min( value = 1, message = "Ingrese solo números")
-	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
+//	@Pattern( regexp = "^[0-9]+([.][0-9]{1,2})?$", message = "El digito no es valido" )
 	private double total;
 	
 	@NotNull( message = "este campo no debe ser nullo" )
-	@Temporal( TemporalType.TIMESTAMP )
-	private Date fechaVenta;
+
+	private String fechaVenta;
 	
 	@OneToOne( cascade = CascadeType.ALL, optional = false )
 	@JoinColumn( name = "cliente_Id", nullable = false )
 	private Cliente cliente;
 	
-	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true )
-	@JoinColumn( name = "venta_Id", nullable = false )
-	private List<DetalleVenta> detalleventa;
+//	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true )
+//	@JoinColumn( name = "venta_Id", nullable = false )
+//	private List<DetalleVenta> detalleventa;
 
 }
